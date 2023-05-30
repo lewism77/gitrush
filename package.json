@@ -1,20 +1,26 @@
 {
   "name": "gitrush",
   "displayName": "GitRush",
-  "description": "Puts the Git features front and centre that I use most often in my workflow.",
+  "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
   },
+  "extensionDependencies": [
+    "vscode.git"
+  ],
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "gitrush.helloWorld",
-      "title": "Hello World"
+      "command": "gitrush.copyCommit",
+      "title": "GitRush: Copy commit hash",
+      "icon": "$(git-commit)"
     }]
   },
   "scripts": {
