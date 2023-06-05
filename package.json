@@ -3,7 +3,8 @@
   "displayName": "GitRush",
   "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
   "version": "1.0.0",
-  "publisher": "Laughing Pancake",
+  "publisher": "LaughingPancake",
+  "repository": "https://github.com/lewism77/gitrush",
   "engines": {
     "vscode": "^1.78.0"
   },
