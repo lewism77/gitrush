@@ -1,6 +1,6 @@
-# gitrush README
+# GitRush
 
- Puts the Git features front and centre that I use most often in my workflow. And I always rush. 
+ Puts the Git features front and centre that I use most often in my workflow. And I always rush.
 
 ## Features
 
@@ -29,5 +29,11 @@ This only works with Git, no other SCM will work.
 - Initial release
 - Added commit hash on status bar and click to copy full hash
 - Added git push button on status bar
+
+## Upcoming
+
+- Configurable force flag on push (in bright red)
+- Commit all changes with amend button
+- Commit list panel
 
 **Enjoy!**
