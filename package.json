@@ -3,6 +3,7 @@
   "displayName": "GitRush",
   "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
   "version": "0.0.1",
+  "publisher": "Lewis Marhin",
   "engines": {
     "vscode": "^1.78.0"
   },
