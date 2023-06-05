@@ -9,7 +9,9 @@ jobs:
     needs: build-test
     steps:
       - name: Package
-        run: npm run package
+        run: |
+          | cd ../
+          | npm run package
 
       - name: Upload release assets
         uses: actions/upload-release-asset@v1
@@ -18,6 +20,8 @@ jobs:
 
       - name: Publish
         if: success()
-        run: npm run deploy
+        run: |
+          | cd ../
+          | npm run deploy
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
