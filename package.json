@@ -1,7 +1,7 @@
 {
   "name": "gitrush",
   "displayName": "GitRush",
-  "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush. To the status bar it adds a display of the first 8 characters of the Git HEAD and clicking it will copy the full hash to the clipboard. Also to the status bar, an option to quickly call git push on click.",
+  "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
   "version": "1.0.0",
   "publisher": "Laughing Pancake",
   "engines": {
@@ -36,7 +36,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "node ./test/runTest.js",
-    "deploy": "vsce publish --yarn"
+    "deploy": "vsce publish"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
