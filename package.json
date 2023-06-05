@@ -1,9 +1,9 @@
 {
   "name": "gitrush",
   "displayName": "GitRush",
-  "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
-  "version": "0.0.1",
-  "publisher": "Lewis Marhin",
+  "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush. To the status bar it adds a display of the first 8 characters of the Git HEAD and clicking it will copy the full hash to the clipboard. Also to the status bar, an option to quickly call git push on click.",
+  "version": "1.0.0",
+  "publisher": "Laughing Pancake",
   "engines": {
     "vscode": "^1.78.0"
   },
@@ -16,13 +16,16 @@
   "activationEvents": [
     "onStartupFinished"
   ],
+  "keywords": ["git", "gitrush", "push", "commit hash"],
   "main": "./src/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "gitrush.copyCommit",
-      "title": "GitRush: Copy commit hash",
-      "icon": "$(git-commit)"
-    }]
+    "commands": [
+      {
+        "command": "gitrush.copyCommit",
+        "title": "GitRush: Copy commit hash",
+        "icon": "$(git-commit)"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -30,14 +33,15 @@
     "test": "node ./test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.78.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.78.0",
+    "@vscode/test-electron": "^2.3.0",
+    "esbuild": "^0.17.19",
     "eslint": "^8.39.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^5.0.4",
-    "@vscode/test-electron": "^2.3.0"
+    "typescript": "^5.0.4"
   }
 }
