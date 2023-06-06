@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "publisher": "LaughingPancake",
   "repository": "https://github.com/lewism77/gitrush",
-  "icon": "https://github.com/lewism77/gitrush/images/icon.png",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.78.0"
   },
