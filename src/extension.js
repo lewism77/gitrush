@@ -2,6 +2,8 @@
 
 const copyHash = require('./copyHash.js');
 const pushChanges = require('./pushChanges.js');
+const forcePushChanges = require('./forcePushChanges.js');
+const commitStagedAmend = require('./commitStagedAmend.js');
 
 /**
  * @param {ExtensionContext} context
@@ -11,9 +13,10 @@ async function activate(context) {
     
     await copyHash.activate(context);
     await pushChanges.activate(context);
+    await forcePushChanges.activate(context);
+    await commitStagedAmend.activate(context);
 }
 
-// This method is called when your extension is deactivated
 function deactivate() {
     console.debug('Closing GitRush...');
 }

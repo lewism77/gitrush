@@ -35,8 +35,10 @@ async function activate(context) {
  * @param {string} icon
  */
 async function updateStatusBarCommit(icon = normalIcon) {
+    let enable = vscode.workspace.getConfiguration('gitrush').get('enableCopyHash');
     const currentCommit = await gitUtil.getCurrentCommit();
-    if (currentCommit) {
+    
+    if (currentCommit && enable) {
         statusBarCommit.text = `${icon} ${currentCommit.substring(0, 8)}`;
         statusBarCommit.tooltip = `Copy: "${currentCommit}"`
         statusBarCommit.show();

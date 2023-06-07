@@ -2,7 +2,7 @@
   "name": "gitrush",
   "displayName": "GitRush",
   "description": "Puts the Git features front and centre that I use most often in my workflow. And I always rush.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "LaughingPancake",
   "repository": "https://github.com/lewism77/gitrush",
   "icon": "images/icon.png",
@@ -32,7 +32,33 @@
         "title": "GitRush: Copy commit hash",
         "icon": "$(git-commit)"
       }
-    ]
+    ],
+    "configuration": 
+      {
+        "title": "GitRush",
+        "properties": {
+          "gitrush.enablePush": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show the 'Push' status bar button. Clicking calls `git push`."
+          },
+          "gitrush.enableForcePush": {
+            "type": "boolean",
+            "default": false,
+            "description": "Show the 'Force Push' status bar button - *be careful with this*. Clicking calls `git push -f`."
+          },
+          "gitrush.enableCopyHash": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show the status bar button with the current hash. Clicking will copy the full hash to the clipboard."
+          },
+          "gitrush.enableCommitAmend": {
+            "type": "boolean",
+            "default": true,
+            "description": "Show the 'Amend' status bar button. Clicking calls `git commit --amend --no-edit`."
+          }
+        }
+      }
   },
   "scripts": {
     "lint": "eslint .",

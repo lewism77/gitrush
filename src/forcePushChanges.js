@@ -2,7 +2,7 @@ const vscode = require('vscode');
 const childProcess = require('child_process');
 const gitUtil = require('./gitUtil.js');
 
-const forcePushIcon = "$(repo-push)";
+const forcePushIcon = "$(repo-force-push)";
 const loadingIcon = "$(sync~spin)";
 
 let statusBarPush;
@@ -12,13 +12,13 @@ let statusBarPush;
  */
 async function activate(context) {
     const gitPath = vscode.workspace.getConfiguration('git').get('path') || 'git';
-    const pushCommandId = 'gitrush.gitPush';
+    const pushCommandId = 'gitrush.gitForcePush';
     let gitPushCommand = vscode.commands.registerCommand(pushCommandId, async () => {
         await updateStatusBarRemote(loadingIcon);
 
         const api = await gitUtil.getGitApi();
         const repo = api.getRepository(vscode.window.activeTextEditor.document.fileName);
-        childProcess.exec(gitPath + ' push',
+        childProcess.exec(gitPath + ' push -f',
             { cwd: repo.rootUri.fsPath },
             (error, stdout, stderr) => {
             if(error) { vscode.window.showErrorMessage(error.toString()); }
@@ -33,6 +33,7 @@ async function activate(context) {
     // Push button on status bar
     statusBarPush = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 99);
     statusBarPush.command = pushCommandId;
+    statusBarPush.backgroundColor = new vscode.ThemeColor("statusBarItem.warningBackground");
     context.subscriptions.push(statusBarPush);
 
     // Update when switching editors
@@ -51,12 +52,12 @@ async function activate(context) {
  * @param {string} icon
  */
 async function updateStatusBarRemote(icon = forcePushIcon) {
-    let enable = vscode.workspace.getConfiguration('gitrush').get('enablePush');
+    let enable = vscode.workspace.getConfiguration('gitrush').get('enableForcePush');
     const remote = await gitUtil.getOriginRemote();
 
     if (remote && enable) {
-        statusBarPush.text = `${icon} Push`;
-        statusBarPush.tooltip = `Push to: "${remote}"`;
+        statusBarPush.text = `${icon} Force Push`;
+        statusBarPush.tooltip = `Force Push to: "${remote}"`;
         statusBarPush.show();
     } else {
         statusBarPush.hide();
