@@ -13,6 +13,7 @@ First button will display the first 8 characters of the Git HEAD and clicking it
 Also to the status bar, an option to quickly call `git push` on click. There is an option (disabled by default) to `git push -f` instead. Obviously, use that with extreme caution.
 
 ![Push](images/push.gif)
+![Push](images/force-push.gif)
 
 You can also `commit --amend --no-edit` as the builtin VS Code method of doing this is a buried in a menu.
 
@@ -22,7 +23,7 @@ You can also `commit --amend --no-edit` as the builtin VS Code method of doing t
 
 ## Disclaimer
 
-Use at your own risk!
+Use at your own risk! You should thoroughly understand how to use Git before using this extension. This is built for my purposes and as a learning experience, it may not be suitable for your workflows.
 
 ## Requirements
 
@@ -30,16 +31,16 @@ This only works with Git, no other SCM will work.
 
 ## Known Issues
 
-- If there are no changes to push, it will display as an error notification (arguably this is fine)
+- Both push and force push will show an error notification even when successful
 - Have not tested with multiple remotes
 
 ## Release Notes
 
-### 1.0.0
+### 1.1.0
 
-- Initial release
-- Added commit hash on status bar and click to copy full hash
-- Added git push button on status bar
+- Added commit amend
+- Added force push
+- Added configuration
 
 ## Upcoming
 
