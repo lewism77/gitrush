@@ -45,7 +45,7 @@
           "gitrush.enableForcePush": {
             "type": "boolean",
             "default": false,
-            "description": "Show the 'Force Push' status bar button - *be careful with this*. Clicking calls `git push -f`."
+            "description": "Show the 'Force Push' status bar button - *be careful with this*. Recommend to only use when you have branch protections in place or if you know how to recover previous HEAD locations. Clicking calls `git push -f`."
           },
           "gitrush.enableCopyHash": {
             "type": "boolean",

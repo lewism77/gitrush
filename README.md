@@ -20,6 +20,10 @@ You can also `commit --amend --no-edit` as the builtin VS Code method of doing t
 
 > This is compatible with multi repo VS Code workspaces. The 'active' repo is whatever repo the currently focused file in the text editor is from.
 
+## Disclaimer
+
+Use at your own risk!
+
 ## Requirements
 
 This only works with Git, no other SCM will work.
@@ -27,6 +31,7 @@ This only works with Git, no other SCM will work.
 ## Known Issues
 
 - If there are no changes to push, it will display as an error notification (arguably this is fine)
+- Have not tested with multiple remotes
 
 ## Release Notes
 
@@ -38,8 +43,6 @@ This only works with Git, no other SCM will work.
 
 ## Upcoming
 
-- Configurable force flag on push (in bright red)
-- Commit all changes with amend button
 - Commit list panel
 
 **Enjoy!**
